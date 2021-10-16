@@ -1,0 +1,179 @@
+
+
+/*animação  da neve*/
+*{
+   margin:0px;
+   padding:0px;
+}
+
+
+section{
+   width:100%;
+   height:650px;
+   position: relative;
+   overflow: hidden;
+   background-color:rgb(152,152,201);
+}
+
+.neve1{
+   background-image: url(neve.png);
+   background-repeat: repeat;
+   width:100%;
+   height:1200px;
+   position: absolute;
+   top:0;
+   left:0;
+   image-rendering: pixelated;
+   animation:neve1 3s infinite linear;
+}
+
+
+.neve2{
+   background-image: url(neve.png);
+   background-repeat: repeat;
+   image-rendering: pixelated;
+   width:100%;
+   background-size:1200px;
+   height:1200px;
+   position: absolute;
+   top:0;
+   left:0;
+   animation:neve2 3s infinite linear;
+}
+
+.neve3{
+   background-image: url(neve.png);
+   background-repeat: repeat;
+   width:100%;
+   image-rendering: pixelated;
+   background-size:1000px;
+   filter: blur();
+   height:1200px;
+   position: absolute;
+   top:0;
+   left:0;
+   animation:neve3 3s infinite linear;
+}
+
+
+
+@keyframes neve1{
+0%{
+    background-position:0px 0px;
+}   
+
+100%{
+   background-position:100px 650px;
+}  
+}
+
+@keyframes neve2{
+   0%{
+       background-position:0px 100px;
+   }   
+  
+   100%{
+      background-position:0px 650px;
+  }  
+  }
+
+
+  @keyframes neve3{
+   0%{
+       background-position:0px 100px;
+   }   
+  
+   100%{
+      background-position:300px 650px;
+  } 
+  }
+  
+/* altura e etc da pixel art */
+:root {
+   --pixel-size: 12; /* deixa o pixel maior/ imagem*/
+}
+
+
+
+.Character {
+   width: calc(32px * var(--pixel-size));
+   height: calc(32px * var(--pixel-size));
+   overflow: hidden;
+   position: relative;
+   margin: 0 auto;
+}
+
+.Character_spritesheet {
+   animation: moveSpritesheet 1s steps( 4) infinite  , moveSpriteshe 3s steps(4) infinite;
+   width: calc(128px * var(--pixel-size));
+   /*128pqtem128pixelaimg*/position: absolute;
+   -webkit-animation: moveSpritesheet 1s steps( 4) infinite  , moveSpriteshe 3s steps(4) infinite;
+}
+.Character_shadow {
+   position: absolute;
+   width: calc(32px * var(--pixel-size));
+   height: calc(32px * var(--pixel-size));
+}
+
+.pixelart {
+   image-rendering: pixelated;
+}
+/*animação dos outros lados */
+.face-right {
+   top: calc(-32px * var(--pixel-size));  
+}
+.face-up {
+   top: calc(-64px * var(--pixel-size));
+}
+.face-left {
+   top: calc(-96px * var(--pixel-size));
+   
+}
+
+
+/* animação do movimento */
+ 
+@keyframes moveSpritesheet {
+   from {
+     
+      transform:translate3d(0px,0,0) ; 
+      
+     
+   }
+   to {
+     
+      transform: translate3d(-100%,0,0)  ;
+
+   }
+   
+  
+}
+/* animação para lado */
+@keyframes moveSpriteshe{
+   0%{
+       left:20px;
+   }
+   15%{ 
+   
+      left:30px;
+   }
+   30%{ 
+      left:0px;
+   }
+   45%{ 
+      right:50px;
+   }
+   65%{    
+      left:-20px;
+   }
+   80%{
+      left:-1px;
+   }
+   95%{ 
+      left:0px;
+   }
+   100%{ 
+      left:10px;
+   }
+}
+
